@@ -180,6 +180,18 @@ file
 
 The API returns parsed CRM records, skipped records, total imported records, and total skipped records.
 
+## Additional Implementations
+
+- Drag and drop CSV upload
+- AI processing progress indicator
+- Incremental CSV parsing
+- Retry mechanism for failed AI batches
+- Virtualized CSV preview table for large datasets
+- Dark mode
+- Unit tests using Vitest
+- Deployment using Vercel and Render
+
+
 ## Author
 
 **Shubham Kumar Maurya**
