@@ -4,6 +4,10 @@ An AI-powered CSV importer built for the GrowEasy Software Developer Assignment.
 
 The application accepts CSV files with different column names and structures and intelligently maps lead information into the GrowEasy CRM format using Gemini AI.
 
+## Live Demo
+
+- **URL**: [https://groweasy-ai-csv-importer-hazel.vercel.app/](https://groweasy-ai-csv-importer-hazel.vercel.app/)
+
 ## Features
 
 - CSV file upload using drag and drop or file picker
