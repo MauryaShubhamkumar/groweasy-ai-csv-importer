@@ -188,7 +188,6 @@ The API returns parsed CRM records, skipped records, total imported records, and
 - Retry mechanism for failed AI batches
 - Virtualized CSV preview table for large datasets
 - Dark mode
-- Unit tests using Vitest
 - Deployment using Vercel and Render
 
 
