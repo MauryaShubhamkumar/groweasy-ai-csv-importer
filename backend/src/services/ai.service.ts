@@ -26,7 +26,7 @@ export const extractCRMRecords = async (
     },
   });
 
-  const text = response.text;
+  const text = response.text; 
 
   if (!text) {
     throw new Error("Empty AI response");
