@@ -4,6 +4,7 @@ import { useState } from "react";
 import CSVUploader from "@/components/CSVUploader";
 import CSVPreview from "@/components/CSVPreview";
 import ParsedResult from "@/components/ParsedResult";
+import ThemeToggle from "@/components/ThemeToggle";
 import { CSVRecord } from "@/types/csv";
 import { CRMRecord, ImportResponse } from "@/types/crm";
 
@@ -72,27 +73,31 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 px-4 py-12">
+    <main className="min-h-screen bg-gray-50 px-4 py-12 transition-colors dark:bg-gray-950">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">
-            AI-Powered CSV Importer
-          </h1>
+        <div className="mb-8 flex items-start justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+              AI-Powered CSV Importer
+            </h1>
 
-          <p className="mt-2 text-gray-600">
-            Upload your CSV file to import CRM leads.
-          </p>
+            <p className="mt-2 text-gray-600 dark:text-gray-400">
+              Upload your CSV file to import CRM leads.
+            </p>
+          </div>
+
+          <ThemeToggle />
         </div>
 
         <CSVUploader onFileParsed={handleFileParsed} />
 
         {file && (
-          <div className="mt-6 rounded-lg bg-white p-4 shadow-sm">
-            <p className="font-medium text-gray-900">
+          <div className="mt-6 rounded-lg bg-white p-4 shadow-sm dark:bg-gray-900">
+            <p className="font-medium text-gray-900 dark:text-white">
               {file.name}
             </p>
 
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               {(file.size / 1024).toFixed(2)} KB
             </p>
           </div>

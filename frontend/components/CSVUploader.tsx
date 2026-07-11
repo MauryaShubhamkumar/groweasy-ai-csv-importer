@@ -63,8 +63,8 @@ export default function CSVUploader({
         onClick={() => inputRef.current?.click()}
         className={`cursor-pointer rounded-xl border-2 border-dashed p-12 text-center transition ${
           dragging
-            ? "border-blue-500 bg-blue-50"
-            : "border-gray-300 bg-white"
+            ? "border-blue-500 bg-blue-50 dark:bg-blue-950"
+            : "border-gray-300 bg-white dark:border-gray-700 dark:bg-gray-900"
         }`}
       >
         <input
@@ -83,11 +83,11 @@ export default function CSVUploader({
 
         <div className="text-4xl">↑</div>
 
-        <h2 className="mt-4 text-lg font-semibold text-gray-900">
+        <h2 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">
           Drop your CSV file here
         </h2>
 
-        <p className="mt-2 text-sm text-gray-500">
+        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
           or click to browse files
         </p>
       </div>
