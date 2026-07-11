@@ -5,6 +5,7 @@ import CSVUploader from "@/components/CSVUploader";
 import CSVPreview from "@/components/CSVPreview";
 import ParsedResult from "@/components/ParsedResult";
 import ThemeToggle from "@/components/ThemeToggle";
+import ProcessingIndicator from "@/components/ProcessingIndicator";
 import { CSVRecord } from "@/types/csv";
 import { CRMRecord, ImportResponse } from "@/types/crm";
 
@@ -37,6 +38,11 @@ export default function Home() {
     try {
       setLoading(true);
       setError("");
+
+      setRecords([]);
+      setSkippedRecords([]);
+      setTotalImported(0);
+      setTotalSkipped(0);
 
       const formData = new FormData();
       formData.append("file", file);
@@ -110,11 +116,15 @@ export default function Home() {
             <button
               onClick={handleConfirmImport}
               disabled={loading}
-              className="rounded-lg bg-gray-900 px-6 py-3 font-medium text-white disabled:cursor-not-allowed disabled:opacity-60"
+              className="rounded-lg bg-gray-900 px-6 py-3 font-medium text-white disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white dark:text-gray-900"
             >
-              {loading ? "Processing with AI..." : "Confirm Import"}
+              {loading ? "Processing..." : "Confirm Import"}
             </button>
           </div>
+        )}
+
+        {loading && (
+          <ProcessingIndicator totalRecords={csvData.length} />
         )}
 
         {error && (
